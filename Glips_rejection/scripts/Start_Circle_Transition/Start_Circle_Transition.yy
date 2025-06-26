@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Start_Circle_Transition",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Start_Circle_Transition",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

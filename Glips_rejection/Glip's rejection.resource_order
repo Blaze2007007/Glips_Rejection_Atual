@@ -1,0 +1,9 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_circle_transition","order":1,"path":"objects/obj_circle_transition/obj_circle_transition.yy",},
+    {"name":"Start_Circle_Transition","order":1,"path":"scripts/Start_Circle_Transition/Start_Circle_Transition.yy",},
+    {"name":"spr_mesa_trabalho","order":1,"path":"sprites/spr_mesa_trabalho/spr_mesa_trabalho.yy",},
+    {"name":"spr_pontos","order":2,"path":"sprites/spr_pontos/spr_pontos.yy",},
+  ],
+}
