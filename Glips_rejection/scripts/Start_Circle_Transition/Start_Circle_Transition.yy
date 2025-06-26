@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Start_Circle_Transition",
+  "%Name":"start_circle_transition",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Start_Circle_Transition",
+  "name":"start_circle_transition",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

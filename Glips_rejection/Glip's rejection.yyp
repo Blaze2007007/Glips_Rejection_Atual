@@ -91,7 +91,7 @@
     {"id":{"name":"save_player_data","path":"scripts/save_player_data/save_player_data.yy",},},
     {"id":{"name":"scr_game_text","path":"scripts/scr_game_text/scr_game_text.yy",},},
     {"id":{"name":"scr_textbox_functions","path":"scripts/scr_textbox_functions/scr_textbox_functions.yy",},},
-    {"id":{"name":"Start_Circle_Transition","path":"scripts/Start_Circle_Transition/Start_Circle_Transition.yy",},},
+    {"id":{"name":"start_circle_transition","path":"scripts/start_circle_transition/start_circle_transition.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_boomba_ataque_direita","path":"sprites/spr_boomba_ataque_direita/spr_boomba_ataque_direita.yy",},},
     {"id":{"name":"spr_boomba_direita","path":"sprites/spr_boomba_direita/spr_boomba_direita.yy",},},

@@ -1,24 +1,29 @@
 if (transitioning) {
-    // Método 1: Usando draw_circle com outline grosso
-    var outline_width = max_radius - circle_radius;
-    if (outline_width > 0) {
-        // Desenhar círculo preto grosso que cobre tudo exceto o centro
-        for (var i = 0; i < outline_width; i++) {
-            draw_set_color(c_black);
-            draw_set_alpha(0.1); // Alpha baixo para fazer várias camadas
-            draw_circle(center_x, center_y, circle_radius + i, true);
-        }
-        draw_set_alpha(1);
+    // Desenhar máscara circular preta usando surface para melhor performance
+    var gui_w = display_get_gui_width();
+    var gui_h = display_get_gui_height();
+    
+    // Criar surface se não existir
+    if (!surface_exists(circle_surface)) {
+        circle_surface = surface_create(gui_w, gui_h);
     }
     
-    // Se o raio for muito pequeno, cobrir tudo de preto
-    if (circle_radius <= 5) {
-        draw_set_color(c_black);
-        draw_set_alpha(1);
-        draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
-    }
+    // Desenhar na surface
+    surface_set_target(circle_surface);
+    draw_clear_alpha(c_black, 1.0); // Preencher tudo de preto
     
-    // Reset
+    // Desenhar círculo transparente no centro (área visível)
+    gpu_set_blendmode(bm_subtract);
+    draw_set_color(c_white);
+    draw_circle(center_x, center_y, circle_radius, false);
+    gpu_set_blendmode(bm_normal);
+    
+    surface_reset_target();
+    
+    // Desenhar a surface na tela
+    draw_surface(circle_surface, 0, 0);
+    
+    // Reset das configurações
     draw_set_color(c_white);
     draw_set_alpha(1);
 }

@@ -58,5 +58,6 @@ last_dir = 1 //variável que armazena a ultima direção para a qual o jogador o
 //-----------------Dialogo-------------------\\
 text_id = "1ª Conv"
 
+depth = -999
 
 

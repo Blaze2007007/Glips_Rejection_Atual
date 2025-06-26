@@ -14,7 +14,7 @@ else
 {
 	ativardialogo = false
 }
-if(!instance_exists(obj_text))
+if(!instance_exists(obj_text) && !ativardialogo)
 {
 	instance_destroy(obj_slimepegajoso)
 }
@@ -297,6 +297,7 @@ switch(state) // Estados do jogador
 						for(var _i = 0; _i < _inst; _i++) // começar um ciclo for que passa por todos os valores de drops do inimigo
 						{
 							instance_destroy(_drops[| _i]) // destroir o drops com o qual o jogador colidiu
+							if(variable_global_exists("pontos"))
 							global.pontos ++ // incrementar pontos
 						}
 					}
@@ -426,27 +427,40 @@ if(variable_global_exists("dead"))
 		if(place_meeting(x,y,obj_centro) && keyboard_check_pressed(ord("F"))) 
 		{
 		    var next_room = -1;
+		    var spawn_x = 170;
+		    var spawn_y = 600;
 		    
-		    // Determinar próxima sala baseada na lógica especificada
+		    // Determinar próxima sala e posição de spawn baseada na lógica especificada
 		    switch(room) 
-			{
+		    {
 		        case rm_nivel1:
-		            next_room = rm_nivel2;  // Nível 1 → Nível 2 (só ida)
+		            next_room = rm_nivel2;  // Nível 1 → Nível 2
+		            spawn_x = 170;
+		            spawn_y = 600;
 		            break;
 		            
 		        case rm_nivel2:
-		            next_room = rm_nivel3;  // Nível 2 → Nível 3 (ida)
+		            next_room = rm_nivel3;  // Nível 2 → Nível 3
+		            spawn_x = 170;
+		            spawn_y = 600;
 		            break;
 		            
 		        case rm_nivel3:
 		            next_room = rm_nivel2;  // Nível 3 → Nível 2 (volta)
+		            spawn_x = 170;
+		            spawn_y = 600;
 		            break;
 		    }
 		    
 		    // Iniciar transição circular se há sala válida
 		    if (next_room != -1) {
-		        start_circle_transition(next_room);
+		        start_circle_transition(next_room, spawn_x, spawn_y);
 		    }
+		}
+		
+		// Reativar controlo do jogador quando a transição terminar
+		if (inmenu && !instance_exists(obj_circle_transition) && !instance_exists(obj_menu)) {
+		    inmenu = false;
 		}
 		if(variable_global_exists("slime"))
 		{
