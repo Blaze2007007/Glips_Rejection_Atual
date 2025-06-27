@@ -1,5 +1,8 @@
-if(place_meeting(x,y,obj_slime_pai) && keyboard_check_pressed(ord("F"))) // Se o jogador estiver em contacto com o objeto e clicar F volta para a sala principal
+if(place_meeting(x,y,obj_slime_pai) && keyboard_check_pressed(ord("F"))) 
 {
-	room_goto(rm_inicio) //ir para a sala principal
-	instance_destroy(obj_slime_pai) // Apagar o objeto obj_slime_pai para não se guardarem os dados do mesmo quando ele sair dos niveis
+    // Verificar se já existe uma transição ativa
+    if (!instance_exists(obj_circle_transition)) {
+        // Iniciar transição - o jogador será destruído quando o círculo fechar completamente
+        start_circle_transition(rm_inicio, -1, -1, true);
+    }
 }

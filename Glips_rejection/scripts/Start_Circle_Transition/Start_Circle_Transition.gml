@@ -1,7 +1,8 @@
 /// @param target_room_id
 /// @param [target_x]
 /// @param [target_y]
-function start_circle_transition(target_room_id, target_x, target_y) {
+/// @param [destroy_player_on_transition]
+function start_circle_transition(target_room_id, target_x, target_y, destroy_player_on_transition) {
     // Verificar se já existe uma transição ativa
     if (instance_exists(obj_circle_transition)) {
         return false;
@@ -25,6 +26,12 @@ function start_circle_transition(target_room_id, target_x, target_y) {
     if (instance_exists(obj_slime_pai)) {
         obj_slime_pai.inmenu = true;
     }
+    
+    // Para salas que não precisam de jogador (como menus), não criar slime
+    transition.create_player = (target_x != -1 && target_y != -1);
+    
+    // Flag para destruir jogador durante a transição (quando está tudo preto)
+    transition.destroy_player_on_transition = destroy_player_on_transition;
     
     return true;
 }

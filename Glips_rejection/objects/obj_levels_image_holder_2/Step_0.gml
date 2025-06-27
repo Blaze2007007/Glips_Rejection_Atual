@@ -12,11 +12,14 @@ else
 {
 	image_index = 0
 }
+
+// TRANSIÇÃO CIRCULAR PARA NÍVEL 3
 if((keyboard_check_pressed(vk_enter)|| (mouse_check_button_pressed(mb_left))) && (instance_position(mouse_x, mouse_y, obj_levels_image_holder_2) || global.escolha == 2) && image_index == 3)
 {
-	room_goto(rm_nivel3)
-	instance_create_depth(150,580,-1000,obj_slime_pai)
+	start_circle_transition(rm_nivel3, 150, 580);
 }
+
+// Resto do código permanece igual...
 if(instance_position(mouse_x, mouse_y, obj_levels_image_holder_2) or global.escolha == 2)
 {
 	image_xscale = lerp(image_xscale,3.2,0.1)

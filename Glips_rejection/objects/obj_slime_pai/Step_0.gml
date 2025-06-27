@@ -117,15 +117,20 @@ if(variable_global_exists("dead"))
 {
 	if(!global.dead) {
 		// Permite troca de personagem se o jogador pressionar "C"
-		if(keyboard_check_pressed(ord("C")) && (!ativardialogo || global.troca) && global.player_data.niv2) 
+		if(variable_global_exists("troca"))
 		{
-			global.slime ++ // Avança para o próximo slime
-			if(global.slime == 3) {
-				global.slime = 0 // Reinicia para o primeiro slime
+			if(keyboard_check_pressed(ord("C")) && (!ativardialogo || global.troca) && global.player_data.niv2) 
+			{
+				if(variable_global_exists("slime"))
+				{
+					global.slime ++ // Avança para o próximo slime
+					if(global.slime == 3) {
+						global.slime = 0 // Reinicia para o primeiro slime
+					}
+					global.troca = true // Ativa a permissão de troca
+				}
 			}
-			global.troca = true // Ativa a permissão de troca
 		}
-		
 		// Define direção horizontal com base nas teclas pressionadas
 		direcao = _direita - _esquerda
 		
@@ -447,8 +452,8 @@ if(variable_global_exists("dead"))
 		            
 		        case rm_nivel3:
 		            next_room = rm_nivel2;  // Nível 3 → Nível 2 (volta)
-		            spawn_x = 170;
-		            spawn_y = 600;
+		            spawn_x = 1294;
+		            spawn_y = 277;
 		            break;
 		    }
 		    

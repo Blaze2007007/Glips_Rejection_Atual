@@ -13,6 +13,8 @@ persistent = true; // IMPORTANTE: Manter o objeto entre mudanças de sala
 target_room = -1;
 target_x = 170; // Posição X onde o jogador aparece na nova sala
 target_y = 600; // Posição Y onde o jogador aparece na nova sala
+create_player = true; // Se deve criar o jogador na nova sala
+destroy_player_on_transition = false; // Se deve destruir o jogador durante a transição
 
 // Centro da transição (centro da tela)
 center_x = display_get_gui_width() / 2;

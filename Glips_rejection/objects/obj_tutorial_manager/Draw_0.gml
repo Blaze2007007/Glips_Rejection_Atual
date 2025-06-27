@@ -16,8 +16,11 @@ if(instance_exists(obj_hollow)) // se o inimigo existe mostra as seguintes mensa
 	{
 		draw_text(obj_slime_pai.x - 100,obj_slime_pai.y-100, "Clica 'E' para atacar")
 	}
-	if(place_meeting(obj_slime_pai.x,obj_slime_pai.y,obj_hollow) && global.vida < 3) // Se o inimigo colidir com o jogador
+	if(variable_global_exists("vida"))
 	{
-		draw_text(obj_slime_pai.x - 100,obj_slime_pai.y-100, "Cuidado tens vida limitada")
+		if(place_meeting(obj_slime_pai.x,obj_slime_pai.y,obj_hollow) && global.vida < 3) // Se o inimigo colidir com o jogador
+		{
+			draw_text(obj_slime_pai.x - 100,obj_slime_pai.y-100, "Cuidado tens vida limitada")
+		}
 	}
 }

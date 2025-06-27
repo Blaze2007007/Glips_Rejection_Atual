@@ -14,9 +14,10 @@ else
 }
 if((keyboard_check_pressed(vk_enter) || (mouse_check_button_pressed(mb_left))) && (instance_position(mouse_x, mouse_y, obj_levels_image_holder_1) || global.escolha == 1) && image_index == 2)
 {
-    room_goto(rm_nivel2)
-	instance_create_depth(165,630,-1000,obj_slime_pai)
+	start_circle_transition(rm_nivel2, 165, 630);
 }
+
+// Resto do código permanece igual...
 if(instance_position(mouse_x, mouse_y, obj_levels_image_holder_1) or global.escolha == 1)
 {
 	image_xscale = lerp(image_xscale,3.2,0.1)
