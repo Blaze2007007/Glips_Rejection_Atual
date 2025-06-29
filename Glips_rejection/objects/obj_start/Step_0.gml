@@ -1,5 +1,8 @@
 if((keyboard_check_pressed(vk_enter)|| (mouse_check_button_pressed(mb_left))) && (instance_position(mouse_x, mouse_y, obj_start) || global.opcao_escolhida == 0))
 {
+	global.vida = 3;
+	global.player_data.vida = 3;
+	global.dead = false; // Garantir que o jogador não está morto
 	global.started = true; // marcar que o jogo começou
 	start_circle_transition(rm_nivel1, 190, 446);
 }

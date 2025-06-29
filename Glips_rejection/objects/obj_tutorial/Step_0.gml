@@ -1,5 +1,8 @@
 if((keyboard_check_pressed(vk_enter) || (mouse_check_button_pressed(mb_left))) && (instance_position(mouse_x, mouse_y, obj_tutorial) || global.opcao_escolhida == 2))
 {
+	global.vida = 3;
+	global.player_data.vida = 3;
+	global.dead = false; // Garantir que o jogador não está morto
 	start_circle_transition(rm_tutorial, 160, 644);
 }
 

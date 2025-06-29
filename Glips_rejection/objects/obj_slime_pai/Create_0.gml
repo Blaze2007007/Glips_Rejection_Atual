@@ -24,6 +24,9 @@ sprite_ataque = spr_slimenormal_ataque_direita // Sprite de ataque do slime prin
 sprite_morto = spr_slimenormal_morto // Sprite de morte do slime principal
 sprite_moving =	spr_slimenormal_direita // Sprite de movimento do slime principal
 
+global.dead = false
+global.gamepaused = false
+
 if(variable_global_exists("vida"))
 player_hp = global.vida // Variável que armazena a vida do jogador
 if(variable_global_exists("pontos"))

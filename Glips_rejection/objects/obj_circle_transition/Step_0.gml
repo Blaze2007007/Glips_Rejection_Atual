@@ -20,9 +20,10 @@ if (transitioning) {
             if(instance_exists(obj_limite))
                 instance_destroy(obj_limite);
                 
-            // Posicionar jogador na nova sala (só se necessário)
+            // Posicionar jogador na nova sala (só se necessário E se o jogador existir)
             if(create_player && target_x != -1 && target_y != -1) {
-                if(instance_exists(obj_slime_pai)) {
+                if(instance_exists(obj_slime_pai) && !transitioning) 
+				{
                     obj_slime_pai.x = target_x;
                     obj_slime_pai.y = target_y;
                     // Resetar estado do jogador
@@ -45,7 +46,7 @@ if (transitioning) {
             circle_radius = max_radius;
             transitioning = false;
             
-            // Liberar controlo do jogador quando a transição terminar
+            // Liberar controlo do jogador quando a transição terminar (APENAS se existir)
             if (instance_exists(obj_slime_pai)) {
                 obj_slime_pai.inmenu = false;
             }

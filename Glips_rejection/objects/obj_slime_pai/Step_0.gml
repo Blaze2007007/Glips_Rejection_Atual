@@ -6,6 +6,20 @@ var _ataque = keyboard_check_pressed(ord("E")) // Verifica se o jogador carregou
 
 // Obter o tilemap da camada "Tiles_2" para verificar colisões
 mapats = layer_tilemap_get_id("Tiles_2")
+
+if(variable_global_exists("vida") && variable_global_exists("dead"))
+{
+	if(global.vida > 0) {
+		global.dead = false; // Forçar que não esteja morto se tem vida > 0
+		// Se estava no estado morto mas tem vida, voltar ao normal
+		if(state == STATES.DEAD) {
+			state = STATES.IDLE;
+			salto = -35;
+			slimevel = 5;
+		}
+	}
+}
+
 if(instance_exists(obj_limite))
 {
 	ativardialogo = true // Esta variável é usada para verificar diálogos
@@ -385,7 +399,7 @@ switch(state) // Estados do jogador
 #region
 if(variable_global_exists("vida"))
 {
-    if(global.vida <= 0)  // se o jogador perder toda a vida
+    if(global.vida == 0)  // se o jogador perder toda a vida
     {
         global.dead = true // global.dead passa a ser true(o jogador está morto)
         sprite_index = sprite_morto //sprite de morto
@@ -466,7 +480,7 @@ if(variable_global_exists("dead"))
 		    
 		    // Iniciar transição circular se há sala válida
 		    if (next_room != -1) {
-		        start_circle_transition(next_room, spawn_x, spawn_y);
+		        start_circle_transition(next_room, spawn_x, spawn_y,1,1);
 		    }
 		}
 		

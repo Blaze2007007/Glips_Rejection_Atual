@@ -2,7 +2,8 @@
 /// @param [target_x]
 /// @param [target_y]
 /// @param [destroy_player_on_transition]
-function start_circle_transition(target_room_id, target_x, target_y, destroy_player_on_transition) {
+/// @param [create_new_player]
+function start_circle_transition(target_room_id, target_x, target_y, destroy_player_on_transition, create_new_player) {
     // Verificar se já existe uma transição ativa
     if (instance_exists(obj_circle_transition)) {
         return false;
@@ -34,4 +35,8 @@ function start_circle_transition(target_room_id, target_x, target_y, destroy_pla
     transition.destroy_player_on_transition = destroy_player_on_transition;
     
     return true;
+}
+// Função específica para game over / menu
+function start_circle_transition_to_menu(target_room_id) {
+    return start_circle_transition(target_room_id, -1, -1, true, false);
 }

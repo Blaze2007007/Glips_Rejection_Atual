@@ -30,10 +30,10 @@ if (transitioning) {
             }
             
             // Navegação com teclado
-            if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W") || keyboard_check_pressed(vk_tab))) {
+            if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))) {
                 selected_button = 0; // Reiniciar
             }
-            if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S") || keyboard_check_pressed(vk_tab))) {
+            if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) {
                 selected_button = 1; // Menu
             }
             
@@ -112,7 +112,7 @@ function restart_level() {
 
 function go_to_menu() {
     // Criar transição circular para o menu como outros botões fazem
-    start_circle_transition(rm_inicio);
+    start_circle_transition_to_menu(rm_inicio)
     
     // Limpar objetos como obj_menu faz
     if (instance_exists(obj_slime_pai) && !transitioning) {
