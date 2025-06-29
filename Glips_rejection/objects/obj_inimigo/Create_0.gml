@@ -29,6 +29,29 @@ if(enemy_id == 1) // Se o id do inimigo for igual a 3 troca os sprites para o re
 	sprite_ini_ataque = spr_boomba_ataque_direita
 }
 
+function reset_enemy_to_spawn() 
+{
+    x = spawn_x;
+    y = spawn_y;
+    vely = 0;
+    movex = 0;
+    state = ENEMYSTATES.IDLE;
+    global.vida_inimigo = spawn_hp;
+    count1 = 0;
+    count2 = 0;
+    count3 = 0;
+    pode_mudar = false;
+    opcao = 0;
+    
+    // Reset sprite para idle
+    if (enemy_id == 1) {
+        sprite_index = sprite_ini_idle;
+        image_xscale = 1.5;
+    } else {
+        sprite_index = sprite_ini_idle;
+    }
+}
+
 enum ENEMYSTATES // Definir o enumerador com todos os estados do inimigo
 {
 	IDLE,      // Mover numa direção aleatória ou ficar parado
@@ -37,3 +60,7 @@ enum ENEMYSTATES // Definir o enumerador com todos os estados do inimigo
 	HIT,	   // Ser atacado pelo jogador
 	DEAD	   // Morrer
 }
+
+spawn_x = x;
+spawn_y = y;
+spawn_hp = enemy_hp;

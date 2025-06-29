@@ -2,7 +2,12 @@
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"obj_circle_transition","order":1,"path":"objects/obj_circle_transition/obj_circle_transition.yy",},
+    {"name":"obj_game_over_transition","order":2,"path":"objects/obj_game_over_transition/obj_game_over_transition.yy",},
+    {"name":"Enemy_Spawn_Functions","order":5,"path":"scripts/Enemy_Spawn_Functions/Enemy_Spawn_Functions.yy",},
+    {"name":"Game_over_system","order":4,"path":"scripts/Game_over_system/Game_over_system.yy",},
+    {"name":"safe_json_parse","order":2,"path":"scripts/safe_json_parse/safe_json_parse.yy",},
     {"name":"start_circle_transition","order":1,"path":"scripts/start_circle_transition/start_circle_transition.yy",},
+    {"name":"validate_player_data_structure","order":3,"path":"scripts/validate_player_data_structure/validate_player_data_structure.yy",},
     {"name":"spr_mesa_trabalho","order":1,"path":"sprites/spr_mesa_trabalho/spr_mesa_trabalho.yy",},
     {"name":"spr_pontos","order":2,"path":"sprites/spr_pontos/spr_pontos.yy",},
   ],

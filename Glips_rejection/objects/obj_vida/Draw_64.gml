@@ -30,7 +30,20 @@ else if(global.player_data.vida == 0) // se a vida for igual a 0 não desenha co
 }
 if(variable_global_exists("pontos"))
 {
+	if(draw_get_color() != c_black)
+	{
+		draw_set_color(c_black)
+	}
 	draw_sprite_ext(spr_pontos,0,cam_x,cam_y+100,1,1,0,c_white,1)
-	draw_set_color(c_black)
-	draw_text_ext_transformed(cam_x + 28,cam_y + 128,global.pontos,0,10,1,1,0) // desenhar os pontos do jogador
+	if(!instance_exists(obj_text))
+	{
+		draw_set_color(c_black)
+		draw_text_ext_transformed(cam_x + 28,cam_y + 128,global.pontos,0,10,1,1,0) // desenhar os pontos do jogador
+	}
+	if(room == rm_tutorial && !instance_exists(obj_hollow))
+	{
+		draw_sprite_ext(spr_pontos,0,cam_x,cam_y+100,1,1,0,c_white,1)
+		draw_set_color(c_black)
+		draw_text_ext_transformed(cam_x + 28,cam_y + 128,global.pontos,0,10,1,1,0) // desenhar os pontos do jogador
+	}
 }

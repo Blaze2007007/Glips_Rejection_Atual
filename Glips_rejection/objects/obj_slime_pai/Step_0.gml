@@ -382,47 +382,54 @@ switch(state) // Estados do jogador
 	}
 	#endregion
 	case STATES.DEAD: //Estado de morte
-	#region
-	if(variable_global_exists("vida"))
-	{
-		if(global.vida <= 0)  // se o jogador perder toda a vida passa para o estado DEAD executa-se o seguinte código
-		{
-			global.dead = true // global.dead passa a ser true(o jogador está morto)
-			sprite_index = sprite_morto //sprite de morto
-			stop() //impedir movimento do jogador
-			if(image_index >= image_number - 1) // se a imagem do sprite chegar ao fim para o loop dos frames da imagem
-			{
-				image_speed = 0
-			}
-			if(!place_meeting(x,y,mapats)) // Se não estiver a tocar no chão passa a descer até o fazer
-			{
-				vely = vely + grv // atribuir gravidade
-				if(vely > 10) // abrandar a descida se vely(velocidade vertical) for maior que 10
-				{
-					vely = 1
-				}
-				y = y + vely // atribuir valores anteriores à posição do jogador
-			}
-			else // se o jogador estiver a tocar no chão a sua velocidade vertical passa a ser 0
-			{
-				vely = 0
-			}
-		}
-		else // se o jogador não estiver morto executa-se o seguinte código
-		{
-			global.dead = false // global.dead passa a ser false(o jogador está vivo)
-			state = STATES.IDLE // passa-se para o estado IDLE
-			// o jogador pode voltar a mexer-se
-			salto = -35
-			slimevel = 5
-			// se _stop for true o jogador passa a ficar inativo
-			if(_stop)
-			{
-				stop()
-			}
-		}
-	}
-	#endregion
+#region
+if(variable_global_exists("vida"))
+{
+    if(global.vida <= 0)  // se o jogador perder toda a vida
+    {
+        global.dead = true // global.dead passa a ser true(o jogador está morto)
+        sprite_index = sprite_morto //sprite de morto
+        stop() //impedir movimento do jogador
+        
+        if(image_index >= image_number - 1) // se a imagem do sprite chegar ao fim
+        {
+            image_speed = 0
+            
+            // Iniciar transição de Game Over após animação de morte
+            if (!instance_exists(obj_game_over_transition)) {
+                start_game_over_transition();
+            }
+        }
+        
+        if(!place_meeting(x,y,mapats)) // Se não estiver a tocar no chão
+        {
+            vely = vely + grv // atribuir gravidade
+            if(vely > 10) // abrandar a descida se vely for maior que 10
+            {
+                vely = 1
+            }
+            y = y + vely // atribuir valores anteriores à posição do jogador
+        }
+        else // se o jogador estiver a tocar no chão
+        {
+            vely = 0
+        }
+    }
+    else // se o jogador não estiver morto
+    {
+        global.dead = false // global.dead passa a ser false(o jogador está vivo)
+        state = STATES.IDLE // passa-se para o estado IDLE
+        // o jogador pode voltar a mexer-se
+        salto = -35
+        slimevel = 5
+        // se _stop for true o jogador passa a ficar inativo
+        if(_stop)
+        {
+            stop()
+        }
+    }
+}
+#endregion
 }
 #region ifs extra
 if(variable_global_exists("dead"))
