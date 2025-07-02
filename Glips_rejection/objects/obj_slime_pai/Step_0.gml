@@ -577,19 +577,19 @@ if(variable_global_exists("dead"))
 }
 //#####DEBUG#####\\
        //|\\
-if(variable_global_exists("vida"))
-{
-	if(keyboard_check_pressed(ord("Q")) && global.vida > 0)
-	{
-			global.player_data.vida = ceil(global.vida) - 1
-			global.vida --
-	}
-	if(keyboard_check(ord("R")) && global.vida <= 2)
-	{
-			global.player_data.vida += 1
-			global.vida ++
-	}
-}
+//if(variable_global_exists("vida"))
+//{
+//	if(keyboard_check_pressed(ord("Q")) && global.vida > 0)
+//	{
+//			global.player_data.vida = ceil(global.vida) - 1
+//			global.vida --
+//	}
+//	if(keyboard_check(ord("R")) && global.vida <= 2)
+//	{
+//			global.player_data.vida += 1
+//			global.vida ++
+//	}
+//}
 	   //|\\
 //#####DEBUG#####\\
 	

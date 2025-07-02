@@ -15,6 +15,9 @@ else
 if((keyboard_check_pressed(vk_enter) || (mouse_check_button_pressed(mb_left))) && (instance_position(mouse_x, mouse_y, obj_levels_image_holder_1) || global.escolha == 1) && image_index == 2)
 {
 	start_circle_transition(rm_nivel2, 165, 630);
+	draw_set_color(c_black)
+	draw_text_ext_transformed((camera_get_view_width(view_camera[0]) - 750) + 28,camera_get_view_height(view_camera[0]) - 450 + 128,global.pontos,0,10,1,1,0) // desenhar os pontos do jogador
+
 }
 
 // Resto do código permanece igual...
