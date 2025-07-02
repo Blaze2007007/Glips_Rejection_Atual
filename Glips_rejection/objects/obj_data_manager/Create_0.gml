@@ -24,3 +24,9 @@ else
 mensagem = true
 
 count = 0 // definição de temporizador
+
+if(room == rm_tutorial)
+{
+	obj_slime_pai.player_hp = 3
+	obj_slime_pai.player_pontos = 0
+}

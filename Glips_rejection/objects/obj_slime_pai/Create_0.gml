@@ -63,4 +63,9 @@ text_id = "1ª Conv"
 
 depth = -999
 
+if(room = rm_tutorial)
+{
+	player_hp = 3
+	player_pontos = 0
+}
 

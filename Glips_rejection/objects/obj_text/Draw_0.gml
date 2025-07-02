@@ -1,4 +1,7 @@
+var _original_color = draw_get_colour();
 draw_set_colour(c_white)
+
+
 accept_key = keyboard_check_pressed(vk_space)
 
 textbox_x = camera_get_view_x(view_camera[0])
@@ -234,4 +237,4 @@ for(var c = 0; c < draw_char; c++)
 	//the text
 	draw_text(char_x[c,page],char_y[c,page],char[c,page])
 }
-
+draw_set_colour(_original_color) // Restaura a cor original

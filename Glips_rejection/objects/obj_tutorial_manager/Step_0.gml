@@ -15,11 +15,9 @@ if (moved && !jumped) {
         obj_bg.image_alpha = 0;
     }
 }
-
-// HOLLOW - SEM PAUSAR O JOGO
 if (instance_exists(obj_hollow)) {
     if (collision_circle(obj_hollow.x, obj_hollow.y, 100, obj_slime_pai, false, true) && !attacked) {
-        global.gamepaused = true;  // PAUSA o jogo aqui!
+        global.gamepaused = true;
         obj_bg.image_alpha = 0.75;
         
         // Anula velocidades do jogador e inimigo
@@ -42,7 +40,6 @@ if (instance_exists(obj_hollow)) {
             warned = true;
         } else {
             count++;
-            // NÃO pausa o jogo aqui também!
             obj_bg.image_alpha = 0.75;
             global.vida = 2;
         }

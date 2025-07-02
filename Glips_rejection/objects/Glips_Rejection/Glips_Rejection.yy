@@ -1,13 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_start",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"Glips_Rejection",
+  "eventList":[],
   "managed":true,
-  "name":"obj_start",
+  "name":"Glips_Rejection",
   "overriddenProperties":[],
   "parent":{
     "name":"grp_interacao",
@@ -32,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_comeco",
-    "path":"sprites/spr_comeco/spr_comeco.yy",
+    "name":"spr_glips_rejection",
+    "path":"sprites/spr_glips_rejection/spr_glips_rejection.yy",
   },
   "spriteMaskId":null,
   "visible":true,

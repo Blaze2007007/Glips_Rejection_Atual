@@ -26,5 +26,6 @@ function scr_game_text(text_id)
 			scr_text("P-Podemos ir devagar?","slimepegajoso-triste",-1)
 			scr_text("Eu... gostava de ir contigo.","slimepegajoso-triste",-1)
 			scr_text("...","slimenormal-afirmacao")
+			global.player_data.conv_1 = true
 	}
 }

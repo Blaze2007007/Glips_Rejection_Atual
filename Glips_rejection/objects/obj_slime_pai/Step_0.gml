@@ -34,8 +34,6 @@ if(!instance_exists(obj_text) && !ativardialogo)
 }
 if(room == rm_tutorial)
 {
-	player_hp = 3 // Define a vida atual do jogador
-	player_pontos = 0 // Define os pontos do jogador
 	player_slime = 0 // Define o tipo de slime que o jogador está a usar
 }
 else
@@ -399,7 +397,7 @@ switch(state) // Estados do jogador
 #region
 if(variable_global_exists("vida"))
 {
-    if(global.vida == 0)  // se o jogador perder toda a vida
+    if(global.vida <= 0)  // se o jogador perder toda a vida
     {
         global.dead = true // global.dead passa a ser true(o jogador está morto)
         sprite_index = sprite_morto //sprite de morto

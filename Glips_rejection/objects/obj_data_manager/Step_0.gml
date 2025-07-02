@@ -2,8 +2,12 @@ if(instance_exists(obj_slime_pai)) // se o objeto obj_slime_pai existir define a
 {
 	if(room == rm_tutorial)
 	{
-		obj_slime_pai.player_hp = 3
-		obj_slime_pai.player_pontos = 0
+		obj_slime_pai.player_slime = 0
+		
+		if(variable_global_exists("vida"))
+		    global.player_data.vida = int64(global.vida)
+		if(variable_global_exists("pontos"))
+		    global.player_data.pontos = int64(global.pontos)
 	}
 	else
 	{
@@ -38,4 +42,7 @@ else // caso contrário não se mostrará a mensagem com os dados
 {
 	mensagem = false
 }
-global.player_data = load_player_data(arquivo_dados) // Carrega os dados do ficheiro para a variável global player_data e de acordo com o código anterior mostra ou não os dados numa mensagem
+if(room != rm_tutorial) 
+{
+    global.player_data = load_player_data(arquivo_dados) // Carrega os dados do ficheiro para a variável global player_data e de acordo com o código anterior mostra ou não os dados numa mensagem
+}

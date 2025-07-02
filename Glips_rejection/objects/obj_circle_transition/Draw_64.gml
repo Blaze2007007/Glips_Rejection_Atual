@@ -14,7 +14,7 @@ if (transitioning) {
     
     // Desenhar círculo transparente no centro (área visível)
     gpu_set_blendmode(bm_subtract);
-    draw_set_color(c_white);
+    draw_set_color(c_black);
     draw_circle(center_x, center_y, circle_radius, false);
     gpu_set_blendmode(bm_normal);
     

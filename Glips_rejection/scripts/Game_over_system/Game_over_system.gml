@@ -13,7 +13,7 @@ function get_checkpoint_data() {
             
         case rm_nivel2:
             checkpoint_data.vida = 3;
-            checkpoint_data.pontos = 0;
+            checkpoint_data.pontos = global.player_data.pontos;
             checkpoint_data.posicao._x = 170;
             checkpoint_data.posicao._y = 600;
             checkpoint_data.niv1 = true; // Mantém progresso anterior
@@ -22,7 +22,7 @@ function get_checkpoint_data() {
             
         case rm_nivel3:
             checkpoint_data.vida = 3;
-            checkpoint_data.pontos = 0;
+            checkpoint_data.pontos = global.player_data.pontos;
             checkpoint_data.posicao._x = 170;
             checkpoint_data.posicao._y = 600;
             checkpoint_data.niv1 = true; // Mantém progresso anterior

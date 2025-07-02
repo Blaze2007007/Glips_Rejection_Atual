@@ -47,6 +47,7 @@
   "name":"Glip's rejection",
   "resources":[
     {"id":{"name":"f_Text","path":"fonts/f_Text/f_Text.yy",},},
+    {"id":{"name":"Glips_Rejection","path":"objects/Glips_Rejection/Glips_Rejection.yy",},},
     {"id":{"name":"obj_bg","path":"objects/obj_bg/obj_bg.yy",},},
     {"id":{"name":"obj_boomba","path":"objects/obj_boomba/obj_boomba.yy",},},
     {"id":{"name":"obj_camera1","path":"objects/obj_camera1/obj_camera1.yy",},},
@@ -113,6 +114,7 @@
     {"id":{"name":"spr_exit","path":"sprites/spr_exit/spr_exit.yy",},},
     {"id":{"name":"spr_fragmentos_de_astrolith","path":"sprites/spr_fragmentos_de_astrolith/spr_fragmentos_de_astrolith.yy",},},
     {"id":{"name":"spr_fundo","path":"sprites/spr_fundo/spr_fundo.yy",},},
+    {"id":{"name":"spr_glips_rejection","path":"sprites/spr_glips_rejection/spr_glips_rejection.yy",},},
     {"id":{"name":"spr_hollow_ataque","path":"sprites/spr_hollow_ataque/spr_hollow_ataque.yy",},},
     {"id":{"name":"spr_hollow_r","path":"sprites/spr_hollow_r/spr_hollow_r.yy",},},
     {"id":{"name":"spr_info","path":"sprites/spr_info/spr_info.yy",},},
@@ -120,6 +122,7 @@
     {"id":{"name":"spr_levels_image_holder","path":"sprites/spr_levels_image_holder/spr_levels_image_holder.yy",},},
     {"id":{"name":"spr_levels","path":"sprites/spr_levels/spr_levels.yy",},},
     {"id":{"name":"spr_limite","path":"sprites/spr_limite/spr_limite.yy",},},
+    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},},
     {"id":{"name":"spr_mesa_trabalho","path":"sprites/spr_mesa_trabalho/spr_mesa_trabalho.yy",},},
     {"id":{"name":"spr_normal_afirmacao","path":"sprites/spr_normal_afirmacao/spr_normal_afirmacao.yy",},},
